@@ -1,0 +1,136 @@
+.theme-toggle-wrapper {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: var(--z-index-fixed);
+}
+
+.theme-toggle-label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.toggle-checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.toggle-slot {
+  position: relative;
+  height: 2.5em;
+  width: 5em;
+  border: 3px solid var(--border);
+  border-radius: 10em;
+  background-color: var(--bg-card);
+  transition: background-color 250ms;
+  box-shadow: var(--shadow-sm);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot {
+  background-color: var(--bg-surface);
+}
+
+.toggle-button {
+  transform: translate(2.93em, 0.43em);
+  position: absolute;
+  height: 1.63em;
+  width: 1.63em;
+  border-radius: 50%;
+  background-color: var(--primary-light);
+  box-shadow: inset 0 0 0 0.18em var(--primary);
+  transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .toggle-button {
+  background-color: var(--bg-secondary);
+  box-shadow: inset 0 0 0 0.18em var(--primary-light);
+  transform: translate(0.44em, 0.43em);
+}
+
+/* Sun and moon icons */
+.sun-icon {
+  position: absolute;
+  height: 1.5em;
+  width: 1.5em;
+  color: var(--primary);
+}
+
+.sun-icon-wrapper {
+  position: absolute;
+  height: 1.5em;
+  width: 1.5em;
+  opacity: 1;
+  transform: translate(0.5em, 0.5em) rotate(15deg);
+  transform-origin: 50% 50%;
+  transition: opacity 150ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .sun-icon-wrapper {
+  opacity: 0;
+  transform: translate(0.75em, 0.5em) rotate(0deg);
+}
+
+.moon-icon {
+  position: absolute;
+  height: 1.5em;
+  width: 1.5em;
+  color: var(--text-secondary);
+}
+
+.moon-icon-wrapper {
+  position: absolute;
+  height: 1.5em;
+  width: 1.5em;
+  opacity: 0;
+  transform: translate(2.75em, 0.5em) rotate(0deg);
+  transform-origin: 50% 50%;
+  transition: opacity 150ms, transform 500ms cubic-bezier(.26,2.5,.46,.71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .moon-icon-wrapper {
+  opacity: 1;
+  transform: translate(3em, 0.5em) rotate(-15deg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .theme-toggle-wrapper {
+    top: 10px;
+    right: 10px;
+  }
+  
+  .toggle-slot {
+    height: 2em;
+    width: 4em;
+  }
+  
+  .toggle-button {
+    transform: translate(2.33em, 0.33em);
+    height: 1.33em;
+    width: 1.33em;
+  }
+  
+  .toggle-checkbox:checked ~ .toggle-slot .toggle-button {
+    transform: translate(0.33em, 0.33em);
+  }
+  
+  .sun-icon-wrapper, .sun-icon, .moon-icon-wrapper, .moon-icon {
+    height: 1.2em;
+    width: 1.2em;
+  }
+  
+  .sun-icon-wrapper {
+    transform: translate(0.4em, 0.4em) rotate(15deg);
+  }
+  
+  .moon-icon-wrapper {
+    transform: translate(2.35em, 0.4em) rotate(0deg);
+  }
+  
+  .toggle-checkbox:checked ~ .toggle-slot .moon-icon-wrapper {
+    transform: translate(2.4em, 0.4em) rotate(-15deg);
+  }
+}

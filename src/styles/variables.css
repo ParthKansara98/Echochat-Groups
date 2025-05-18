@@ -1,0 +1,152 @@
+:root {
+  /* Spacing & Layout */
+  --spacing-xs: 5px;
+  --spacing-sm: 10px;
+  --spacing-md: 15px;
+  --spacing-lg: 20px;
+  --spacing-xl: 30px;
+
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-round: 50%;
+
+  /* Font sizes */
+  --font-size-xs: 0.8rem;
+  --font-size-sm: 0.9rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.2rem;
+  --font-size-lg: 1.4rem;
+  --font-size-xl: 1.5rem;
+  --font-size-xxl: 1.8rem;
+  --font-size-title: 2rem;
+
+  /* Container widths */
+  --container-sm: 480px;
+  --container-md: 768px;
+  --container-lg: 992px;
+  --container-xl: 1200px;
+
+  /* Z-index levels */
+  --z-index-normal: 1;
+  --z-index-dropdown: 10;
+  --z-index-sticky: 20;
+  --z-index-fixed: 30;
+  --z-index-modal: 40;
+  --z-index-popover: 50;
+  --z-index-tooltip: 60;
+
+  /* Animations */
+  --transition-speed: 0.3s;
+
+  /* RGB Variables */
+  --color-primary-rgb: 65, 105, 225;
+  --color-danger-rgb: 231, 76, 60;
+  --color-primary-transparent: rgba(65, 105, 225, 0.1);
+
+  /* Additional UI Variables */
+  --color-primary-shadow: var(--shadow-sm);
+  --color-highlight-shadow: var(--shadow-sm);
+  --color-text-muted: var(--text-secondary);
+  --color-bg-hover: var(--bg-secondary);
+  --color-bg-input: var(--input-bg);
+  --color-bg-message-incoming: var(--bg-surface);
+  --color-border-light: var(--border);
+  --color-highlight: var(--primary);
+
+  /* Fallback Variables */
+  --color-primary: var(--primary, #4169e1);
+  --color-success: var(--success, #27ae60);
+  --color-danger: var(--danger, #e74c3c);
+  --color-warning: var(--warning, #f39c12);
+  --color-bg-primary: var(--bg-primary, #f8f9ff);
+  --color-bg-secondary: var(--bg-secondary, #f0f2ff);
+  --color-text-primary: var(--text-primary, #2c3e50);
+  --color-text-secondary: var(--text-secondary, #5d6b82);
+  --color-border: var(--border, rgba(0, 0, 0, 0.1));
+}
+
+/* Light Theme (Default) - Royal Blue */
+:root {
+  /* Base Colors */
+  --bg-primary: #f8f9ff;
+  --bg-secondary: #f0f2ff;
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+  
+  /* Brand Colors */
+  --primary: #4169e1; /* Royal Blue */
+  --primary-hover: #3254c9;
+  --primary-light: #6889f5;
+  --accent: #8a2be2; /* BlueViolet */
+  --accent-hover: #7a1dd2;
+  
+  /* Functional Colors */
+  --success: #27ae60;
+  --warning: #f39c12;
+  --danger: #e74c3c;
+  --danger-hover: #c0392b;
+  
+  /* Text Colors */
+  --text-primary: #2c3e50;
+  --text-secondary: #5d6b82;
+  --text-tertiary: #94a3b8;
+  --border: rgba(0, 0, 0, 0.1);
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.05);
+  --shadow-card: 0 2px 10px rgba(0, 0, 0, 0.1);
+  
+  /* UI Elements */
+  --card-highlight: rgba(65, 105, 225, 0.1);
+  --input-bg: #f8f9ff;
+  --input-border: rgba(65, 105, 225, 0.2);
+  --scrollbar-thumb: rgba(65, 105, 225, 0.3);
+  --scrollbar-track: rgba(0, 0, 0, 0.05);
+  --color-overlay-rgb: 0, 0, 0;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  /* Base Colors */
+  --bg-primary: #1a1b26;
+  --bg-secondary: #24273a;
+  --bg-surface: #1e1e2e;
+  --bg-card: #262837;
+  
+  /* Brand Colors */
+  --primary: #5865F2;
+  --primary-hover: #4752c4;
+  --primary-light: #7984f5;
+  --accent: #bb9af7; /* Purple */
+  --accent-hover: #9d7de3;
+  
+  /* Functional Colors */
+  --success: #9ece6a;
+  --color-overlay-rgb: 0, 0, 0;
+  --warning: #e0af68;
+  --danger: #f7768e;
+  --danger-hover: #e7667e;
+  
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #c0caf5;
+  --text-tertiary: #7a88cf;
+  --border: rgba(255, 255, 255, 0.1);
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.2);
+  --shadow-card: 0 2px 10px rgba(0, 0, 0, 0.4);
+  
+  /* UI Elements */
+  --card-highlight: rgba(88, 101, 242, 0.15);
+  --input-bg: #1e1e2e;
+  --input-border: rgba(88, 101, 242, 0.3);
+  --scrollbar-thumb: rgba(88, 101, 242, 0.5);
+  --scrollbar-track: rgba(0, 0, 0, 0.2);
+}
