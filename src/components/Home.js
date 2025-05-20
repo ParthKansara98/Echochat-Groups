@@ -4,6 +4,7 @@ import axios from "axios";
 import { useSnackbar } from "notistack";
 import OldMemberForm from './OldMemberForm';
 import NewMemberForm from './NewMemberForm';
+import ThemeToggle from './ThemeToggle';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faEdit,
@@ -19,7 +20,9 @@ import {
     faThList,
     faHashtag,
     faFilter,
-    faMagnifyingGlass
+    faMagnifyingGlass,
+    faSun,
+    faMoon
 } from "@fortawesome/free-solid-svg-icons";
 import { CircularProgress, Box } from '@mui/material';
 import { API_GROUP } from "../api";
@@ -48,6 +51,9 @@ function Home() {
     const [adminGroupId, setAdminGroupId] = useState(null);
     const [loading, setLoading] = useState(true);
     const [viewMode, setViewMode] = useState('card'); // Options: 'card', 'list', 'detail'
+    const [currentTheme, setCurrentTheme] = useState(() => {
+        return document.documentElement.getAttribute('data-theme') || 'light';
+    });
     const navigate = useNavigate();
     const location = useLocation();
     const { enqueueSnackbar } = useSnackbar();
@@ -270,12 +276,21 @@ function Home() {
         }, 300);
     };
 
+    const toggleTheme = () => {
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        setCurrentTheme(newTheme);
+    };
+
     return (
         <>
             <div className="app">
                 <div className="app-header">
                     <h1 className="app-title">Echochat Groups</h1>
-
+                    <div className="header-actions">
+                        <ThemeToggle currentTheme={currentTheme} toggleTheme={toggleTheme} />
+                    </div>
                 </div>
 
                 {/* Search and filter section */}

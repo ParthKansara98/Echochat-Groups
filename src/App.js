@@ -5,7 +5,6 @@ import ChatPage from "./components/ChatPage";
 import Home from "./components/Home";
 import AddGroup from './components/AddGroup';
 import Admin from './components/AdminPanel';
-import ThemeToggle from './components/ThemeToggle';
 import { SnackbarProvider } from 'notistack';
 
 function App() {
@@ -21,7 +20,6 @@ function App() {
     <SnackbarProvider maxSnack={3}>
       <Router>
         <div className="app-container">
-          <ThemeToggle />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/chat/:groupId" element={<ChatPage />} />

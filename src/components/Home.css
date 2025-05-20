@@ -26,11 +26,74 @@
   background-clip: text;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .theme-toggle-btn {
-  padding: 0.5rem 1rem;
-  font-size: 1.25rem;
-  border-radius: var(--border-radius);
+  position: relative;
+  width: 70px;
+  height: 35px;
+  background-color: var(--bg-secondary);
+  border-radius: 20px;
+  border: 2px solid var(--color-border);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
   transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.theme-toggle-btn::before {
+  content: '';
+  position: absolute;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  left: 4px;
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 1;
+}
+
+.theme-toggle-btn[data-theme="dark"]::before {
+  transform: translateX(35px);
+}
+
+.theme-toggle-btn svg {
+  position: relative;
+  z-index: 2;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle-btn .sun-icon {
+  color: var(--color-text-secondary);
+  margin-left: auto;
+}
+
+.theme-toggle-btn .moon-icon {
+  color: var(--color-text-secondary);
+}
+
+.theme-toggle-btn[data-theme="dark"] .sun-icon {
+  color: var(--color-warning);
+}
+
+.theme-toggle-btn[data-theme="light"] .moon-icon {
+  color: var(--color-primary);
+}
+
+.theme-toggle-btn:hover {
+  background-color: var(--bg-hover);
+  border-color: var(--primary);
+}
+
+.theme-toggle-btn:active::before {
+  width: 32px;
 }
 
 .search-form {
@@ -1308,4 +1371,9 @@
 
 .clear-filters-btn:hover svg {
   transform: rotate(15deg) scale(1.1);
+}
+
+/* Remove the old theme toggle wrapper styles */
+.theme-toggle-wrapper {
+  display: none;
 }
